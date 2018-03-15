@@ -10,7 +10,7 @@ def initialize(id:nil, name:, breed:)
 end
 
 def self.create_table
-  sql = "CREATE TABLE IF NOT EXISTS dogs(id INTEGER PRIMARY KEY, name TEXT, grade TEXT"
+  sql = "CREATE TABLE IF NOT EXISTS dogs (id INTEGER PRIMARY KEY, name TEXT, grade TEXT)"
 
   DB[:conn].execute(sql)
 end
