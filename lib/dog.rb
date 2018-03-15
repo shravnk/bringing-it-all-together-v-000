@@ -60,6 +60,7 @@ def save
     SQL
     dog = DB[:conn].execute(sql, self.name, self.breed)
     @id = DB[:conn].execute(sql,"SELECT last_insert_rowid() FROM students")[0][0]
+    return self
   end
 end
 
