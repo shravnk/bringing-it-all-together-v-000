@@ -88,7 +88,7 @@ sql = <<-SQL
     found = DB[:conn].execute(sql,hash[:name], hash[:breed])
     binding.pry
     if found.empty?
-      self.create(hash[:name], hash[:breed])
+      self.create(hash)
     else
       self.find_by_id(found[0][0])
     end
