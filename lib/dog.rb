@@ -75,6 +75,7 @@ def self.find_by_id(id)
   SQL
 
   row = DB[:conn].execute(sql, id).first
+  self.new_from_db(row)
 end
 
 end
