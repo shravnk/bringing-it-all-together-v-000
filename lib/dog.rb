@@ -21,7 +21,7 @@ def self.drop_table
 end
 
 def self.new_from_db(attr)
-  dog = self.new(attr[0],attr[1], attr[2])
+  dog = self.new(attr[0], attr[1], attr[2])
   dog
 end
 
