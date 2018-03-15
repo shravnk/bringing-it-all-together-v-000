@@ -85,9 +85,8 @@ sql = <<-SQL
     WHERE  name = ? AND breed = ?
     LIMIT 1
     SQL
-    found = DB[:conn].execute(sql,hash[:name], hash[:breed])
-    binding.pry
-    if found.empty?
+  found = DB[:conn].execute(sql,hash[:name], hash[:breed])
+   if found.empty?
       self.create(hash)
     else
       self.find_by_id(found[0][0])
