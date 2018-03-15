@@ -1,3 +1,4 @@
+require 'pry'
 class Dog
 
 attr_accessor :name, :breed
@@ -85,6 +86,7 @@ sql = <<-SQL
     LIMIT 1
     SQL
     found = DB[:conn].execute(sql,hash[:name], hash[:breed])
+    binding.pry
     if !found
       self.create(hash[:name], hash[:breed])
     else
