@@ -59,7 +59,7 @@ def save
       VALUES (?,?)
     SQL
     dog = DB[:conn].execute(sql, self.name, self.breed)
-    @id = DB[:conn].execute(sql,"SELECT last_insert_rowid() FROM students")[0][0]
+    @id = DB[:conn].execute("SELECT last_insert_rowid() FROM students")[0][0]
     return self
   end
 end
