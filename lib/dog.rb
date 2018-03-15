@@ -88,7 +88,7 @@ sql = <<-SQL
     if !found
       self.create(hash[:name], hash[:breed])
     else
-      self.find_by_id(found[0])
+      self.find_by_id(found[0][0])
     end
 end
 
