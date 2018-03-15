@@ -90,8 +90,6 @@ sql = <<-SQL
     else
       self.find_by_id(found[0][0])
     end
-
-
 end
 
 end
