@@ -84,7 +84,7 @@ sql = <<-SQL
     WHERE  name = ? AND breed = ?
     LIMIT 1
     SQL
-    found = DB[:conn].execute(hash[:name], hash[:breed])
+    found = DB[:conn].execute(sql,hash[:name], hash[:breed])
     if !found
       self.create(hash[:name], hash[:breed])
     else
