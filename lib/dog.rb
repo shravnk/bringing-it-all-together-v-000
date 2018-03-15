@@ -78,4 +78,20 @@ def self.find_by_id(id)
   self.new_from_db(row.flatten)
 end
 
+def self.find_or_create_by(name, breed)
+sql = <<-SQL
+    SELECT * FROM dogs
+    WHERE  name = ? AND breed = ?
+    LIMIT 1
+    SQL
+    found = DB[:conn].execute(name, breed)
+    if !found
+      self.create(name, breed)
+    else
+      self.find_by_id(found[0][0])
+    end
+
+
+end
+
 end
