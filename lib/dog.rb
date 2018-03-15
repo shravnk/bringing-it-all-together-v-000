@@ -35,8 +35,8 @@ def self.find_by_name(name)
   row = DB[:conn].execute(sql, name).first
 end
 
-def self.create(attr)
-  dog = self.new(attr[:name], attr[:breed])
+def self.create(name:, breed:)
+  dog = self.new(name, breed)
   dog.save
   dog
 
